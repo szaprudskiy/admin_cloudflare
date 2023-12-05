@@ -1,11 +1,13 @@
 import './App.css'
 
-import Auth from './components/auth/Auth'
+import Account from './components/account/Account'
+import Records from './components/records/Records'
 
 const App = () => {
   return (
     <div className="App">
-      <Auth />
+      <Account />
+      <Records />
     </div>
   )
 }
