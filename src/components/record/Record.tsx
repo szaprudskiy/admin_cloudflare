@@ -56,7 +56,7 @@ const Record = (props: any) => {
           onSubmit={handleUpdate}
           key={firstRecord.id}
         >
-          <h1 className="text-lg font-semibold mb-2">Запись</h1>
+          <h1 className="text-lg font-semibold mb-2">Домен</h1>
           <div className="mb-2">{firstRecord.name}</div>
           <div className="mb-2">{firstRecord.content}</div>
           <div className="mb-2">{firstRecord.type}</div>
@@ -68,7 +68,7 @@ const Record = (props: any) => {
             className="p-2 border mb-2 rounded"
           />
           <button className="bg-green-500 text-white p-2 rounded cursor-pointer">
-            Обновить IP записи
+            Обновить IP домена
           </button>
         </form>
       )}
