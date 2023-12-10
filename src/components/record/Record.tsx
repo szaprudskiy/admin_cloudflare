@@ -31,7 +31,7 @@ const Record = (props: any) => {
       }
     )
     console.log('updateRecord', updateRecord)
-    toast.success('IP успешно обновился', {
+    toast.success('IP успешно обновлен', {
       position: 'top-right',
       autoClose: 5000,
       hideProgressBar: false,

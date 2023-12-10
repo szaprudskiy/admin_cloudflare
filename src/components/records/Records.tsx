@@ -2,6 +2,7 @@ import { useState, FormEvent, useEffect } from 'react'
 import axios from 'axios'
 import GridLoader from 'react-spinners/GridLoader'
 import { FormData, Account } from '../interfaces/account'
+import { ToastContainer, toast } from 'react-toastify'
 import Record from '../record/Record'
 import styles from './Records.module.css'
 
@@ -33,6 +34,16 @@ const Records: React.FC = () => {
         formData,
       ])
       getAccounts()
+      toast.success('Данные успешно добавлены', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored',
+      })
       console.log('response', response.data)
     } catch (error) {
       console.error('Ошибка при отправке данных:', error)
@@ -86,6 +97,7 @@ const Records: React.FC = () => {
 
   return (
     <div className="container mx-auto p-8 bg-gray-100 rounded shadow">
+      <ToastContainer />
       <form onSubmit={handleSubmit} className="mb-6">
         <h1 className="text-3xl font-semibold mb-4">Аккаунт</h1>
         <div className="grid grid-cols-2 gap-4">
