@@ -30,9 +30,10 @@ const Records: React.FC = () => {
           domainId,
         },
       }
-      const response = await axios.post('http://localhost:4002/api/account', [
-        formData,
-      ])
+      const response = await axios.post(
+        'https://panel.stat-gurteam.info/cloudflare/api/account',
+        [formData]
+      )
       getAccounts()
       toast.success('Данные успешно добавлены', {
         position: 'top-right',
@@ -53,7 +54,7 @@ const Records: React.FC = () => {
   const getAccounts = async () => {
     try {
       const responseAccounts = await axios.get(
-        `http://localhost:4002/api/getaccounts`
+        `https://panel.stat-gurteam.info/cloudflare/api/getaccounts`
       )
       setAccounts(responseAccounts.data)
       console.log('responseAccounts', responseAccounts.data)
@@ -70,7 +71,7 @@ const Records: React.FC = () => {
     try {
       setLoading(true)
       const responseRecords = await axios.post(
-        `http://localhost:4002/api/getdnsrecords`,
+        `https://panel.stat-gurteam.info/cloudflare/api/getdnsrecords`,
         {
           keyId: selectedAccount,
           zoneId: selectedDomain,
