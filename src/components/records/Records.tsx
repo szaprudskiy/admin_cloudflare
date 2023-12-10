@@ -154,7 +154,7 @@ const Records: React.FC = () => {
           className="button bg-blue-500 text-white p-2 rounded cursor-pointer"
           type="submit"
         >
-          Зарегистрировать аккаунт и домен
+          Зарегистрировать аккаунт и (или) домен
         </button>
       </form>
       <form onSubmit={handleGetRecords} className="mb-6">
