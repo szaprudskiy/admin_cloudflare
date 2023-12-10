@@ -1,5 +1,6 @@
 import { useState, FormEvent, useEffect } from 'react'
 import axios from 'axios'
+import GridLoader from 'react-spinners/GridLoader'
 import { FormData, Account } from '../interfaces/account'
 import Record from '../record/Record'
 import styles from './Records.module.css'
@@ -13,6 +14,7 @@ const Records: React.FC = () => {
   const [accounts, setAccounts] = useState<Account[]>([])
   const [selectedAccount, setSelectedAccount] = useState<string>('')
   const [selectedDomain, setSelectedDomain] = useState<string>('')
+  const [loading, setLoading] = useState<boolean>(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -55,6 +57,7 @@ const Records: React.FC = () => {
 
   const getDnsRecords = async () => {
     try {
+      setLoading(true)
       const responseRecords = await axios.post(
         `http://localhost:4002/api/getdnsrecords`,
         {
@@ -71,6 +74,8 @@ const Records: React.FC = () => {
       console.log(responseRecords.data)
     } catch (error) {
       console.error('Error fetching data:', error)
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -183,7 +188,11 @@ const Records: React.FC = () => {
           Получить данные
         </button>
       </form>
-      <Record records={records} accountkey={selectedAccount} />
+      {loading ? (
+        <GridLoader color="#36d7b7" />
+      ) : (
+        <Record records={records} accountkey={selectedAccount} />
+      )}
     </div>
   )
 }
