@@ -82,7 +82,7 @@ const Records: React.FC = () => {
   return (
     <div className="container mx-auto p-8 bg-gray-100 rounded shadow">
       <form onSubmit={handleSubmit} className="mb-6">
-        <h1 className="text-3xl font-semibold mb-4">Добавить аккаунт</h1>
+        <h1 className="text-3xl font-semibold mb-4">Аккаунт</h1>
         <div className="grid grid-cols-2 gap-4">
           <div>
             <input
@@ -107,6 +107,7 @@ const Records: React.FC = () => {
             />
           </div>
         </div>
+        <h1 className="text-3xl font-semibold mb-4">Домен</h1>
         <div className="grid grid-cols-2 gap-4 mt-4">
           <div>
             <input
@@ -135,11 +136,13 @@ const Records: React.FC = () => {
           className="button bg-blue-500 text-white p-2 rounded cursor-pointer"
           type="submit"
         >
-          Добавить аккаунт
+          Зарегистрировать аккаунт и домен
         </button>
       </form>
       <form onSubmit={handleGetRecords} className="mb-6">
-        <h1 className="text-3xl font-semibold mb-4">Получить данные</h1>
+        <h1 className="text-3xl font-semibold mb-4">
+          Выберите из списка аккаунт и домен
+        </h1>
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className="text-sm text-gray-600 block mb-1">
