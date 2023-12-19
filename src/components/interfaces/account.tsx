@@ -1,16 +1,12 @@
-interface AccountData {
-  accountName: string
-  accountKey: string
-}
-
-interface DomainData {
-  domainName: string
-  domainId: string
-}
-
 export interface FormData {
-  account: AccountData
-  domain: DomainData
+  account?: {
+    accountName: string
+    accountKey: string
+  }
+  domain?: {
+    domainName: string
+    domainId: string
+  }
 }
 
 export interface Account {

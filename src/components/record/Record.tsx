@@ -7,15 +7,15 @@ import 'react-toastify/dist/ReactToastify.css'
 
 const Record = (props: any) => {
   const [ip, setIp] = useState<string>('')
-  console.log('props', props)
+  // console.log('props', props)
   const records = props.records
 
   const firstRecord = records[0]
 
   const handleUpdate = async (e: React.FormEvent) => {
     e.preventDefault()
-    const updateRecord = axios.post(
-      'https://panel.stat-gurteam.info/cloudflare/api/updaterecord',
+    await axios.post(
+      'http://localhost:4002/cloudflare/api/updaterecord',
       {
         content: ip,
         name: firstRecord.name,
@@ -30,7 +30,7 @@ const Record = (props: any) => {
         },
       }
     )
-    console.log('updateRecord', updateRecord)
+    // console.log('updateRecord', updateRecord)
     toast.success('IP успешно обновлен', {
       position: 'top-right',
       autoClose: 5000,
@@ -43,7 +43,7 @@ const Record = (props: any) => {
     })
     try {
     } catch (error) {
-      console.error('Weng wrong update record type', error)
+      console.error('Went wrong update record type', error)
     }
   }
 
