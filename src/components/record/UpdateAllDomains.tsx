@@ -73,7 +73,7 @@ const UpdateAllDomains: React.FC<UpdateAllDomainsProps> = (props: any) => {
               className="p-2 border mb-2 rounded"
             />
             <button className="bg-green-500 text-white p-2 rounded cursor-pointer">
-              Обновить IP домена
+              Обновить IP доменов
             </button>
           </form>
         </div>
