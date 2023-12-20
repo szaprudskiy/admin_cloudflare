@@ -15,7 +15,7 @@ const Record = (props: any) => {
   const handleUpdate = async (e: React.FormEvent) => {
     e.preventDefault()
     await axios.post(
-      'http://localhost:4002/cloudflare/api/updaterecord',
+      'https://panel.stat-gurteam.info/cloudflare/api/updaterecord',
       {
         content: ip,
         name: firstRecord.name,

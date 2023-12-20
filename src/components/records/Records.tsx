@@ -39,7 +39,7 @@ const Records: React.FC = () => {
         }
       }
       const response = await axios.post(
-        'http://localhost:4002/cloudflare/api/account',
+        'https://panel.stat-gurteam.info/cloudflare/api/account',
         [formData]
       )
       getAccounts()
@@ -62,7 +62,7 @@ const Records: React.FC = () => {
   const getAccounts = async () => {
     try {
       const responseAccounts = await axios.get(
-        `http://localhost:4002/cloudflare/api/getaccounts`
+        `https://panel.stat-gurteam.info/cloudflare/api/getaccounts`
       )
       setAccounts(responseAccounts.data)
       setAccountsByAcc(responseAccounts.data)
@@ -80,7 +80,7 @@ const Records: React.FC = () => {
     try {
       setLoading(true)
       const responseRecords = await axios.post(
-        `http://localhost:4002/cloudflare/api/getdnsrecords`,
+        `https://panel.stat-gurteam.info/cloudflare/api/getdnsrecords`,
         {
           keyId: selectedAccount,
           zoneId: selectedDomain,
@@ -110,7 +110,7 @@ const Records: React.FC = () => {
       setLoadingAccount(true)
       e.preventDefault()
       const getDomains = await axios.post(
-        'http://localhost:4002/cloudflare/api/getalldomains',
+        'https://panel.stat-gurteam.info/cloudflare/api/getalldomains',
         {
           keyId: selectedAccountByAcc,
         },

@@ -19,7 +19,7 @@ const UpdateAllDomains: React.FC<UpdateAllDomainsProps> = (props: any) => {
       e.preventDefault()
       for (const account of accounts) {
         await axios.post(
-          'http://localhost:4002/cloudflare/api/updaterecord',
+          'https://panel.stat-gurteam.info/cloudflare/api/updaterecord',
           {
             content: ip,
             name: account.name,
